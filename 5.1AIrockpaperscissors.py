@@ -10,10 +10,11 @@ salir = False
 while jugando:
 
 	player = input("\nPlayer, make your move: ").lower()
-
-	if player == "exit":
+	
+	if player == "exit" or player == "q" or player == "salir":
 		jugando = False
 		salir = True
+		
 	if jugando:
 		rand_num = randint(0,2)
 		if rand_num == 0:
@@ -25,28 +26,33 @@ while jugando:
 
 		print(f"\nComputer plays {computer}" )
 
+		if player != "exit" or player != "q" or player != "salir":
+			print("rock...")
+			print("paper...")
+			print("scissors")
+
 		if player == computer:
 			print("\nIt's a tie!")
 		elif player == "rock":
 			if computer == "scissors":
-				print("\npoint for player!")
+				print("\nPoint for human!")
 				p1 += 1
 			else:
-				print("\npoint for computer!")
+				print("\nPoint for computer!")
 				c1 += 1
 		elif player == "paper":
 			if computer == "rock":
-				print("\npoint for player!")
+				print("\nPoint for human!")
 				p1 += 1
 			else:
 				print("\npoint for computer!")
 				c1 += 1
 		elif player == "scissors":
 			if computer == "paper":
-				print("\npoint for player!")
+				print("\nPoint for human!")
 				p1 += 1
 			else:
-				print("\npoint for computer!")	
+				print("\nPoint for computer!")	
 				c1 += 1
 		else:
 			print("\nPlease enter a valid move!")
